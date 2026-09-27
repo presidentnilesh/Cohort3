@@ -1,0 +1,33 @@
+@font-face {
+    font-family: hihi;
+    src: url('./Melted\ Monster.ttf');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    background: #000;
+}
+
+html ,
+body{
+    height: 100%;
+    width: 100%;
+}
+h1{
+    padding: 20px;
+    font-family:'hihi';
+    font-weight:900;
+    /* font-size: initial; */
+    text-align: center;
+    text-transform: lowercase;
+    font-size: 50px;
+    color: red;
+}
+div{
+    height: 100px;
+    width: 100px;
+    background: linear-gradient(red green);
+}
