@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+    background: #000;
+    color: antiquewhite;
+}
+
+
+.box{
+    height: 200px;
+    width: 200px;
+    margin: 5px;
+    border: 10px solid white;
+    background: green;
+}
+.box:nth-child(2n){
+    background-color: pink;
+}
+.box:nth-last-child(1){
+    background-color: yellow;
+}

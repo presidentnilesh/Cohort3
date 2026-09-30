@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+.box{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(88, 88, 129);
+}
+.box2{
+    height: 200%;
+    width: 200%;
+    background-color: rgb(60, 60, 165);
+}
+.box3{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(17, 17, 116);
+}
+.do{
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    position: sticky;
+    top: 10%;
+}
