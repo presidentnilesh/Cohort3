@@ -11,15 +11,29 @@ body,html{
     color: white;
 }
 
-#n{
-    height:100%;
+.main{
+
     width: 100%;
+height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+
+}
+#n{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
 }
 .nav{
-    height: 10%;
+    height: 100px;
     width: 100%;
     background: red;
-    margin: 1px;
+
     display: flex;
     gap: 20px;
     justify-content: space-between;
@@ -49,4 +63,44 @@ body,html{
     display: flex;
     gap: 20px;
     margin-right: 20px;
+}
+#center{
+    width: 100%;
+    height: 20%;
+    background: tan;
+}
+button{
+    height: 40px;
+    width: 200px;
+    font-size: larger;
+}
+
+#bottom{
+    height: 100px;
+    width: 100%;
+    background: lightseagreen;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+}
+.part1{
+     background: rgb(170, 79, 146);
+    height: 100%;
+    width: 400px;
+    display: flex;
+    gap: 20px;
+}
+.part2{
+     background: rgb(148, 42, 120);
+    height: 100%;
+    width: 400px;
+    display: flex;
+    gap: 20px;
+}
+.part3{
+     background: rgb(154, 12, 116);
+    height: 100%;
+    width: 400px;
+    display: flex;
+    gap: 20px;
 }
