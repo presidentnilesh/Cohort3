@@ -1,0 +1,31 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+main{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #FBF9EB;
+}
+nav{
+    width: 100%;
+    background: #FFFEFB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-part-3{
+    justify-content: space-between;
+    display: flex;
+    gap:1vw;
+    padding: 10px;
+}
+.nav-part-1{
+    justify-content: space-between;
+    display: flex;
+    gap:1vw;
+    font-size: 1rem;
+
+}
