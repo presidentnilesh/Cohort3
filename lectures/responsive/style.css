@@ -22,8 +22,15 @@ h1{
     background-color: red;
     position: absolute;
     animation-name: move;
-    animation-duration: 4s;
+    animation-duration: 2s;
     animation-delay: 1s;
+    animation-fill-mode: forwards;  
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+img:hover{
+    animation-play-state: paused;
 }
 
 img{
@@ -33,6 +40,10 @@ img{
     top:250px;
     animation-name: move;
     animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
 }
 /* @media (max-width:500px) {
     #box{
@@ -55,14 +66,54 @@ img{
     }
 } */
 @keyframes move {
-    from{
+    0%{
         left:0;
 
     }
-    to {
+    50%{
+        top: 0;
+        left: 80% ;
+    }
+    100%{
         left:60%;
-        background: blue;
+
         border-radius: 30%;
         rotate: 360deg;
+
+    }
+}
+
+
+/* all above are now useless , as i have deleteted all element from the htlml . */
+
+.parent{
+    background: red;
+    overflow: hidden;
+    display: flex;
+}
+.inner{
+    background: crimson;
+    display: flex;
+    animation-name: motion;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+h4{
+
+    display: flex;
+    background: cornflowerblue;
+    padding: 10px;
+    font-size: 50px;
+    
+}
+
+@keyframes motion {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+
     }
 }
