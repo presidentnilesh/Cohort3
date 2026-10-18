@@ -1,15 +1,14 @@
 *{
     margin: 0;
     padding-inline: 0;
-    background: #000;
-    color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   
 }
 
 html, body{
     height: 100%;
     width: 100%;
-
+     background: #000;
+      color: white;
 }
 /* nav{
     margin: 20px;
@@ -39,3 +38,51 @@ h4::after{
 h4:hover::after{
    width: 100%;
 } */
+
+button{
+    height: 100px;
+    width: 300px;
+    font-size: 30px;
+    background: transparent;
+    border: rgb(0, 155, 206) 5px solid;
+    color:  rgb(57, 75, 101);
+    margin: 150px;
+    padding: 20px;
+    font-weight: 600;
+    position: relative;
+    isolation: isolate;
+    transition: all ease 0.4s;
+    overflow: hidden;
+}
+
+button::after{
+    content: "";
+    /* height: 100%;
+    width: 0%;
+    background-color: rgb(57, 75, 101);
+    position: absolute;
+    left :0;
+    top: 0;
+    z-index: -1;
+    transition: ease all 0.4s; */
+
+        /* different effect  */
+    height: 50px;
+    width: 100px;
+    background: rgb(57, 75, 101);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: ease all 0.4s
+}
+button:hover::after{
+    /* width: 100%; */
+    transform: translate(-50%,-50%) scale(3.5);
+}
+button:hover{
+    /* color: white; */
+    color: white;
+}
