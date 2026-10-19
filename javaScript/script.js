@@ -10,3 +10,4 @@ console.table(["Anand", "uttam","Nilesh" ])
 
 var naam = prompt("enter your name ")
 console.log(naam)
+console.log('kaishe ')
