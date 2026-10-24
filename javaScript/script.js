@@ -137,3 +137,39 @@
 
         // example 2 ( to find maximun nmumber )
 
+// aar = [23,56,912,67,97,34]
+
+// let ans = aar.reduce(function(acc,val){
+//         if(val>acc){
+//                 return val
+//         }
+//         return acc
+// },0)
+
+// console.log(ans)
+
+                // find 
+
+// let arr = [ "ritik" , "aman", "rahul", "uttam", "lodu"]
+// let ans = arr.find((value)=> value=="lodu"
+// )
+// console.log(ans)
+
+        //example 2 
+
+// let arr = [23,5,6734,34,46,678]
+
+// let ans = arr.find(function(value){
+//         return ( value%5 == 0)
+// })
+// console.log(ans)
+
+        // example 3 
+        
+let arr = ["ayushi", "aman" , "lodu" , "chutiya"]
+
+let ans = arr.some((val)=>{
+        return (val.includes("a"))
+})
+
+console.log(ans)
