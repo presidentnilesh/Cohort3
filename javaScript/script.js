@@ -98,6 +98,14 @@
 // console.log("all the sutdent who scored grater then 75 are as follow :",pass)
 
 
+        // example 3 ( to finds the largest number)
+
+// var arr = [ 3,56,24,910,24,75,34]
+
+// var ans = arr.filter(function(value){
+//         return value === Math.max(...arr)
+// })
+// console.log(ans)
 // var tim = marks.map((vari)=>{
 //         return vari*2 
 // })
@@ -109,6 +117,7 @@
 // }
 // x()
 
+
                 // IIFE ( imediate invocked function envocked )
 // (function() {
 //     console.log("I run immediately!");
@@ -116,12 +125,15 @@
 
                 // reduce 
 
-var arr = [10,20,30,40]
+// var arr = [10,20,30,40]
 
-let sum = arr.reduce(function (acc , value){
-        // console.log(acc)
-        return(acc+value)
+// let sum = arr.reduce(function (acc , value){            // we have to pass accumulator and the value -> accumulator is the box/container which contains the value 
+//         // console.log(acc)                             // the result will the updated value of the accumulator 
+//         return(acc*value)            
         
-},0)
+// },1)
 
-console.log(sum)
+// console.log(sum)
+
+        // example 2 ( to find maximun nmumber )
+
