@@ -35,8 +35,9 @@ let obj = {
 }
 
 let copy = JSON.stringify(obj)
-JSON.parse(copy)
-obj.sub.maths="dipika ma'am"
+let copy2 = JSON.parse(copy)
+copy2.sub.maths="dipika ma'am"
 console.log(obj)
 
-console.log(copy)
+console.log(copy2)
+
