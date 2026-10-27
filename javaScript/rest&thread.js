@@ -22,22 +22,52 @@
 
     // deep copy 
 
-let obj = {
-    name : "NIlesh" ,
-    class : "B2" ,
-    city : "CDG",
-    age : 22,
-    sub : {
-        maths : "himanshi ma'am",
-        english : "Nindiya" , 
-        phy : "bindu"
-    }
+// let obj = {
+//     name : "NIlesh" ,
+//     class : "B2" ,
+//     city : "CDG",
+//     age : 22,
+//     sub : {
+//         maths : "himanshi ma'am",
+//         english : "Nindiya" , 
+//         phy : "bindu"
+//     }
+// }
+
+// let copy = JSON.stringify(obj)
+// let copy2 = JSON.parse(copy)
+// copy2.sub.maths="dipika ma'am"
+// console.log(obj)
+
+// console.log(copy2)
+
+
+
+        // for in
+// var obj = {
+//     name : "anand",
+//     class : "LLB",
+//     city : "patna"
+// }
+
+// for ( a in obj){
+//     console.log(obj[a])
+// }
+
+    // lexical (scope under it's parent )
+// var counter = function(){
+//     var count = 0 ;
+//     return function (){
+//         count ++
+//         console.log(count)
+//     }
+// }
+// var ans = counter()
+
+// console.log(ans())
+
+function anand(){
+    console.log("kaiha hai ")
 }
 
-let copy = JSON.stringify(obj)
-let copy2 = JSON.parse(copy)
-copy2.sub.maths="dipika ma'am"
-console.log(obj)
-
-console.log(copy2)
-
+console.log(anand())
