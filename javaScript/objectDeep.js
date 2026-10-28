@@ -56,4 +56,15 @@ var obj2 = {
     user : "NIlesh" ,
     city :  "cdg",
 }
-obj.sayIntro.call(obj2,"llb","mummy")
+var obj3 = {
+    user : "Uttam" ,
+    city :  "tirupati",
+}
+var obj4 = {
+    user : "Botu" ,
+    city :  "India",
+}
+obj.sayIntro.call(obj2,"llb","mummy")   // first one is the obj and the rest are the actualArguments 
+obj.sayIntro.apply(obj3,["job" , "village"])    // this is apply method , the only diference is that we pass the actualArgument in the from of array 
+obj.sayIntro.bind(obj4, "grass")()   // in bind , the call is delay , so we ourself have to call the object that we made
+
