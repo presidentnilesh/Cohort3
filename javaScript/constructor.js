@@ -60,28 +60,28 @@
         // method 2 
 
 
-function Students(fname , lname ,contact , isverified){
-    this.fname = fname
-    this.lname = lname
-    this.contact = contact
-    this.isverified = isverified
-}
-let showProfile = function(){
-        if(this.isverified){
-            console.log(`Student name is ${this.fname} ${this.lname} and his phone number is : ${this.contact} .`)
-        }
-        else {
-            console.log("The user is not verified .")
-        }
-    }
+// function Students(fname , lname ,contact , isverified){
+//     this.fname = fname
+//     this.lname = lname
+//     this.contact = contact
+//     this.isverified = isverified
+// }
+// let showProfile = function(){
+//         if(this.isverified){
+//             console.log(`Student name is ${this.fname} ${this.lname} and his phone number is : ${this.contact} .`)
+//         }
+//         else {
+//             console.log("The user is not verified .")
+//         }
+//     }
 
-Students.prototype.company = "sheriyans"        // by this we are making company as the protoype of students , so all student have coampany as sheriyans
+// Students.prototype.company = "sheriyans"        // by this we are making company as the protoype of students , so all student have coampany as sheriyans
 
-Students.prototype.showProfile = showProfile        // in this we set showProfile as the prototype of all Students
+// Students.prototype.showProfile = showProfile        // in this we set showProfile as the prototype of all Students
 
-let s1 = new Students("Utam" , "Kumar" , 5847395234 , true)
-let s2 = new Students("sanjay" , "singh" , 4958245923 , false)
-let s3 = new Students("Anand" , "kumar" , 24958723947 , true)
-// console.log(s1)
+// let s1 = new Students("Utam" , "Kumar" , 5847395234 , true)
+// let s2 = new Students("sanjay" , "singh" , 4958245923 , false)
+// let s3 = new Students("Anand" , "kumar" , 24958723947 , true)
+// // console.log(s1)
 
-console.log(s1.company)
+// console.log(s1.company)
