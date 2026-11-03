@@ -78,43 +78,84 @@
 
         // a promise for ordering food 
 
-let odeer = new Promise(function(resolve,reject){
-    console.log("Food order ho gaya")
-    var statuss = true
-    setTimeout(function(){
-        if(statuss){
-            console.log("Order aa gaya.")
+// let odeer = new Promise(function(resolve,reject){
+//     console.log("Food order ho gaya")
+//     var statuss = true
+//     setTimeout(function(){
+//         if(statuss){
+//             console.log("Order aa gaya.")
+//             resolve()
+//         }else{
+//             console.log("Order has been cancel by the saller .")
+//             reject()
+//         }
+//     },3000)
+// })
+
+// odeer.then(function(){      // when promise satisfies  -> we can dorectly write .then
+//     setTimeout(() => {
+//         console.log("Please pay the bill")
+
+//         let paymentStatus = true 
+//         setTimeout(() => {
+//             if(paymentStatus){
+//                 console.log("Payment Done...")
+//             }else{
+//                 console.log("Payment Failed...")
+//             }
+//         }, 1000);       // ya 5 sec ka baad 1 sec aur waut karega , as it is inside a settimneout 
+//     }, 5000);
+// })
+// .catch(function(){  // when promise fails  -> we can dorectly write .catch
+//     setTimeout(() => {
+//         console.log("sorry for the issue you face.")
+//     }, 5500);
+// })
+// .finally(function(){    // evertime promise runs -> we can dorectly write .finally
+//     setTimeout(() => {
+//         console.log("Thanks.")
+//     }, 7000);
+// })
+
+
+    // practice of last promise 
+
+var phone = new Promise(function(resolve,reject){
+    console.log("kya aapko phone leena hai?")
+    var answer = false
+    setTimeout(() => {
+        if(answer){
+            console.log("Kon sha phone leena hai aapko ?")
             resolve()
         }else{
-            console.log("Order has been cancel by the saller .")
+            console.log("to fir aur kya leena hai aapko ?")
             reject()
         }
-    },3000)
+    }, 2000);
 })
 
-odeer.then(function(res,rej){      // when promise satisfies  -> we can dorectly write .then
-    setTimeout(() => {
-        console.log("Please pay the bill")
-
-        let paymentStatus = true 
+phone.then(function(){
+    console.log("Iphone dikha du ?")
+    var ans2 = true 
+    return another = new Promise(function(yes,no){
         setTimeout(() => {
-            if(paymentStatus){
-                console.log("Payment Done...")
-                res()
-            }else{
-                console.log("Payment Failed...")
-                rej()
+            if(ans2){
+                console.log("Make the payment , and it's your ...")
+                yes()
             }
-        }, 6000);
-    }, 5000);
+            else{
+                console.log("No problem sir .!")
+                no()
+            }
+        }, 2000);
+    })
 })
-.catch(function(){  // when promise fails  -> we can dorectly write .catch
-    setTimeout(() => {
-        console.log("sorry for the issue you face.")
-    }, 5500);
+.then(function(){
+    console.log("congratulation Sir ...")
 })
-.finally(function(){    // evertime promise runs -> we can dorectly write .finally
-    setTimeout(() => {
-        console.log("Thanks.")
-    }, 7000);
+.catch(function(){
+    console.log("Thank You Sir .")
+})
+.finally(function(){
+    console.log("Have a nice day Sir ..!")
 })
