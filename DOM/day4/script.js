@@ -36,7 +36,8 @@
 
 const form = document.querySelector("form")
 const name = document.querySelector('#name')
-const email = document.querySelector('#email')
+const emaill = document.querySelector('#email')
+const dpp = document.querySelector('#dpp')
 const user = document.querySelector('.users')
 
 // form.addEventListener('submit',(events)=>{
@@ -54,21 +55,75 @@ const user = document.querySelector('.users')
 
 // to bring the card when click submit
 
-form.addEventListener('submit', (events) => {
-    events.preventDefault()
-    let naam = name.value;
-    let mail = email.value;
-    if (naam.trim() === "" && mail.trim() === "") return;  // we write this so that if name or email is empty then no card will be created 
+
+const usersData = [
+    {
+        name: "Aarav Sharma",
+        email: "aarav.sharma@gmail.com",
+        dp: "https://randomuser.me/api/portraits/men/32.jpg",
+        dob: "2002-05-14"
+    },
+    {
+        name: "Priya Verma",
+        email: "priya.verma@gmail.com",
+        dp: "https://randomuser.me/api/portraits/women/44.jpg",
+        dob: "2003-08-21"
+    },
+    {
+        name: "Rahul Singh",
+        email: "rahul.singh@gmail.com",
+        dp: "https://randomuser.me/api/portraits/men/75.jpg",
+        dob: "2001-11-09"
+    },
+    {
+        name: "Ananya Gupta",
+        email: "ananya.gupta@gmail.com",
+        dp: "https://randomuser.me/api/portraits/women/68.jpg",
+        dob: "2004-02-17"
+    },
+    {
+        name: "Kabir Mehta",
+        email: "kabir.mehta@gmail.com",
+        dp: "https://randomuser.me/api/portraits/men/52.jpg",
+        dob: "2002-12-03"
+    }
+];
+
+const ui = ()=>{
+
+    user.innerHTML="";
+    
+    usersData.forEach((elem)=>{
     user.innerHTML += `<div class="user-card">
     <div class="img-box">
-    <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=986&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
-    alt="image">
+    <img src=${elem.dp}>
     </div>
     <div class="text">
-    <h3>Name : ${naam}</h3>
-    <p>Email : ${mail}</p>
+    <h3>Name : ${elem.name}</h3>
+    <p>Email : ${elem.email}</p>
     </div>
     </div>`
+})
+}
+ui()
+
+form.addEventListener('submit', (events) => {
+
+    events.preventDefault()
+    let naam = name.value;
+    let mail = emaill.value;
+    let dp = dpp.value;
+
+    if (naam.trim() === "" || mail.trim() === "" || dp.trim()==="") return;  // we write this so that if name or email is empty then no card will be created 
+    usersData.push({
+        name:naam ,
+        email:mail,
+        dp
+    });
+
+    ui()
+
+    console.log(usersData)
 
     form.reset()        // make the form empty to write next form 
 })
