@@ -93,7 +93,7 @@ const ui = ()=>{
 
     user.innerHTML="";
     
-    usersData.forEach((elem)=>{
+    usersData.forEach((elem,index)=>{
     user.innerHTML += `<div class="user-card">
     <div class="img-box">
     <img src=${elem.dp}>
@@ -104,7 +104,7 @@ const ui = ()=>{
     </div>
     <div class="actions">
                 <button id="edit">Edit</button>
-                <button id="del">Delete</button>
+                <button onclick="deleCard(${index})" id="del">Delete</button>
             </div>
     </div>`
 })
@@ -131,3 +131,10 @@ form.addEventListener('submit', (events) => {
 
     form.reset()        // make the form empty to write next form 
 })
+
+
+let deleCard = (index)=>{
+    usersData.splice(index,1)
+    console.log(usersData)
+    ui()
+}   
