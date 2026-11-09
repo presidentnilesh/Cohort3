@@ -102,6 +102,10 @@ const ui = ()=>{
     <h3>Name : ${elem.name}</h3>
     <p>Email : ${elem.email}</p>
     </div>
+    <div class="actions">
+                <button id="edit">Edit</button>
+                <button id="del">Delete</button>
+            </div>
     </div>`
 })
 }
