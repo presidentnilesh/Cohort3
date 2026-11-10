@@ -34,6 +34,8 @@
 const main = document.querySelector('main')
 const btn = document.querySelector('button')
 const timer = document.querySelector("#timer")
+const scoree = document.querySelector("#score")
+const overlay = document.querySelector("#overlay")
 
 const box = document.createElement('div')
 box.classList.add("box")
@@ -41,7 +43,9 @@ box.classList.add("box")
 
 let interval;
 let timeOut;
+let overlayTimeout
 let time = 0
+let score = 0
 
 const boxColor = () => {
     let r = Math.floor(Math.random() * 256)
@@ -55,8 +59,8 @@ const randomBox = () => {
     main.append(box)
     box.style.backgroundColor = boxColor()
 
-    let mainH = main.clientHeight - box.offsetHeight        
-    let mainW = main.clientWidth - box.offsetWidth       
+    let mainH = main.clientHeight - box.offsetHeight
+    let mainW = main.clientWidth - box.offsetWidth
 
     time += 1
     timer.textContent = time;
@@ -69,9 +73,11 @@ const randomBox = () => {
     box.style.left = `${l}px`
 }
 
+
 btn.addEventListener('click', (e) => {
     randomBox()
     clearTimeout(timeOut)
+    clearTimeout(overlayTimeout)
     clearInterval(interval)
 
     time = 0;
@@ -83,5 +89,21 @@ btn.addEventListener('click', (e) => {
 
     timeOut = setTimeout(() => {
         clearInterval(interval)
-    }, 11000);
+        overlay.style.display = "flex"
+        overlay.innerHTML = `<h3>Game Over</h3>
+        <p>Your score is : ${score}</p>`
+
+        overlayTimeout = setTimeout(() => {
+            overlay.style.display = "none"
+            timer.textContent = 0 
+            scoree.textContent = 0 
+        }, 3000);
+
+    }, 10000);
 })
+
+box.addEventListener('click', () => {
+    score += 1
+    scoree.textContent = score
+})
+
