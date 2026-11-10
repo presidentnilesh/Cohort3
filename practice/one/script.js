@@ -94,12 +94,63 @@
 
         // promise
 
-const promise = new Promise((resolve,reject)=>{
-    setTimeout(() => {
-        console.log("data recerived")
-    }, 2000);
-})
+// const promise = new Promise((resolve,reject)=>{
+//     setTimeout(() => {
+//         resolve("data recerived")
+//     }, 2000);
+// })
 
-promise.then((value)=>{
-    console.log(value)
-})
+// promise.then((value)=>{
+//     console.log(value)
+// })
+
+
+        // promise - rejected 
+
+// const promise = new Promise((resolve,reject)=>{
+//     setTimeout(() => {
+//         reject("Prmoise failed")
+//     }, 2000);
+// })
+// promise.then((varlue)=>{
+//     console.log("good")
+// })
+// .catch((error)=>{   // as the promise rejeccted 
+//     console.log("something went wrong :" , error)
+// })
+
+
+        // promise chain 
+
+// function addTen(num){
+//     return new Promise((resolve)=>{
+//         resolve(num + 10)
+// })
+// }
+// addTen(0).then((result)=>{
+//     console.log(result)     // 10
+//     return addTen(result)
+// }).then((result)=>{
+//     console.log(result) // 20
+//     return addTen(result)
+// }).then((result)=>{
+//     console.log(result) // 30
+// })
+
+        // fetch 
+
+const response = async ()=>{
+    try {
+        const data = await fetch('https://jsonplaceholder.typicode.com/posts/1')        // await is use so that the program wil wait until it api will not return the data
+
+        if(!data.ok){
+            return new Error("response nahi aaya bade bhai ")
+        }
+        let data2 = await data.json()
+        console.log(data2   )
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+response()
