@@ -91,7 +91,7 @@ const usersData = [
 
 const ui = ()=>{
 
-    user.innerHTML="";
+    user.innerHTML="";      // we did this so that whenever we call the ui , the array should not repeat .
     
     usersData.forEach((elem,index)=>{
     user.innerHTML += `<div class="user-card">
@@ -104,7 +104,7 @@ const ui = ()=>{
     </div>
     <div class="actions">
                 <button id="edit">Edit</button>
-                <button onclick="deleCard(${index})" id="del">Delete</button>
+                <button onclick="deleCard(${index})" id="del">Delete</button>       
             </div>
     </div>`
 })
@@ -126,7 +126,7 @@ form.addEventListener('submit', (events) => {
     });
 
     ui()
-
+ 
     console.log(usersData)
 
     form.reset()        // make the form empty to write next form 
