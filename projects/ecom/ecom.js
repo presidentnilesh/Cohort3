@@ -9,7 +9,7 @@ const productCard = document.querySelector(".product")
 let productName, discription, price, image;
 let updateIndex = null;
 
-let prodctArr = [
+let prodctArr = JSON.parse(localStorage.getItem("products")) || [
     {
         productName: "Nike Air T-Shirt",
         discription: "Premium cotton oversized T-shirt for everyday wear.",
@@ -42,12 +42,17 @@ let prodctArr = [
     }
 ]
 
+
 create.addEventListener('click', () => {
     productForm.style.display = 'flex'
 })
 close.addEventListener('click', () => {
     productForm.style.display = 'none'
 })
+
+console.log(prodctArr)
+// let lsd = JSON.parse(localStorage.getItem("products"))       // this is only to print all the data in the console 
+// console.log(lsd)
 
 const ui = () => {
     productCard.innerHTML = "" 
@@ -69,7 +74,7 @@ const ui = () => {
     })
 }
 
-ui()
+
 productForm.addEventListener('submit', (event) => {    // here we are not using button because butto n only click , it doesnot store any data 
 
     event.preventDefault()
@@ -94,8 +99,10 @@ productForm.addEventListener('submit', (event) => {    // here we are not using 
     if(updateIndex != null){
         prodctArr[updateIndex] = obj
         updateIndex = null
+        localStorage.setItem('products' , JSON.stringify(prodctArr))
     }else{
         prodctArr.push(obj)
+        localStorage.setItem('products' , JSON.stringify(prodctArr))
     }
 
     ui()
@@ -105,6 +112,9 @@ productForm.addEventListener('submit', (event) => {    // here we are not using 
     console.log(prodctArr)
 
 })
+
+
+ui()
 
 const updateProduct = (name)=>{
     productForm.style.display = 'flex'
@@ -122,5 +132,6 @@ const updateProduct = (name)=>{
 
 let delCard = (index)=>{
     prodctArr.splice(index,1)
+    localStorage.setItem('products' , JSON.stringify(prodctArr))
     ui()
 }
