@@ -7,6 +7,7 @@ const productCard = document.querySelector(".product")
 
 
 let productName, discription, price, image;
+let updateIndex = null;
 
 let prodctArr = [
     {
@@ -49,20 +50,20 @@ close.addEventListener('click', () => {
 })
 
 const ui = () => {
-     productCard.innerHTML = "" 
-    prodctArr.forEach((elem) => {
+    productCard.innerHTML = "" 
+    prodctArr.forEach((elem,index) => {
         productCard.innerHTML += ` <div class="product-card">
                 <div class="img">
                     <img src="${elem.image}" alt="shoes image">
                 </div>
                 <div class="text">
-                    <h3>Name : ${elem.productName}</h3>
-                <p>Dscription : ${elem.discription}</p>
+                    <h3>Name : <span>${elem.productName}</span></h3>
+                <p><b>Dscription :</b> <span>${elem.discription}</span></p>
                     <p>Price : ${elem.price}</p>
                 </div>
                 <div class="btn">
-                    <button id="update">Update</button>
-                    <button id="delete">Delete</button>
+                    <button onclick="updateProduct('${elem.productName}')" id="update">Update</button>
+                    <button onclick="delCard(${index})" id="delete">Delete</button>
                 </div>
             </div>`
     })
@@ -89,10 +90,37 @@ productForm.addEventListener('submit', (event) => {    // here we are not using 
         price,
         image
     }
-    prodctArr.push(obj)
+
+    if(updateIndex != null){
+        prodctArr[updateIndex] = obj
+        updateIndex = null
+    }else{
+        prodctArr.push(obj)
+    }
+
     ui()
     form.reset()
+    productForm.style.display = 'none'
 
     console.log(prodctArr)
 
 })
+
+const updateProduct = (name)=>{
+    productForm.style.display = 'flex'
+    let product = prodctArr.find((elem)=>elem.productName===name)
+    updateIndex = prodctArr.findIndex((elem)=>elem.productName===name)
+
+    // console.log(product)
+
+    form[0].value = product.productName
+    form[1].value = product.discription
+    form[2].value = product.price
+    form[3].value = product.image
+}
+
+
+let delCard = (index)=>{
+    prodctArr.splice(index,1)
+    ui()
+}
